@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+</head>
+<body>
+    <h1>Register Page</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+        <div>
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" value="{{ field.value }}">
+        </div>
+        {% endfor %}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>CREATE DATABASE todo_db;
